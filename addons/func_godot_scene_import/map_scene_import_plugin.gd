@@ -8,16 +8,15 @@ func _get_extensions( ) -> PackedStringArray:
 func _import_scene(path: String, flags: int, options: Dictionary) -> Object:
 	var tree = SceneTree.new()
 
-	var map_node := FuncGodotMapSceneImportable.new()
+	var map_node := FuncGodotMap.new()
 	map_node.local_map_file = path
-	map_node.block_until_complete = true
 
 	if options.has("map_settings") and options["map_settings"] is FuncGodotMapSettings:
 		map_node.map_settings = options["map_settings"]
 
 	tree.root.add_child(map_node)
 
-	map_node.verify_and_build()
+	map_node.build()
 
 	tree.root.remove_child(map_node)
 	tree.free()

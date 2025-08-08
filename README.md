@@ -15,3 +15,6 @@ To use this addon, you add it to your res://addons folder, go to Project>Project
 As a minor compatibility note, this plugin works fine with func_godot_lightpass. The way I use it, is I add the scene to my scene tree, enable edit as children for the scene, add any func_godot_lightpass entities, export all the func_godot_lightpass_entities, and then(usually after you save the scene), Godot detects the changes to the .map file and updates them.
 
 If you find any bugs, report them on the Github issue tracker.
+
+Credit to Pspritechologist for original implementation and idea
+

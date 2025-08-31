@@ -13,6 +13,8 @@ func _import_scene(path: String, flags: int, options: Dictionary) -> Object:
 
 	if options.has("map_settings") and options["map_settings"] is FuncGodotMapSettings:
 		map_node.map_settings = options["map_settings"]
+	if options.has("build_flags") and options["build_flags"] is int:
+		map_node.build_flags = options["build_flags"]
 
 	tree.root.add_child(map_node)
 
